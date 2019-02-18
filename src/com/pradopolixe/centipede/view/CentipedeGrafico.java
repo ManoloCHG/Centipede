@@ -8,6 +8,7 @@ package com.pradopolixe.centipede.view;
 import javafx.scene.Group;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Arc;
+import javafx.scene.shape.Rectangle;
 
 /**
  *
@@ -30,10 +31,10 @@ public class CentipedeGrafico {
             arc.setStartAngle(-45.0f);
             arc.setLength(270.0f);
             
-        Group cabeza = new Group();
-            Rectangle lola = new Rectangle();
-        prueba.add(arc,50,50); 
-        prueba.add(cabeza,10, 10);
+//        Group cabeza = new Group();
+        Rectangle cabeza = new Rectangle();
+        prueba.add(arc,150,150); 
+        prueba.add(cabeza,250,80);
     }
     
 }

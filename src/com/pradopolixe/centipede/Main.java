@@ -5,11 +5,11 @@
  */
 package com.pradopolixe.centipede;
 
+import com.pradopolixe.centipede.view.CentipedeGrafico;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -22,6 +22,18 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
    
+        CentipedeGrafico prueba = new CentipedeGrafico();
+        prueba.champiñon();
+        
+        StackPane root = new StackPane();
+        root.getChildren().add(prueba.prueba());
+         
+        Scene scene = new Scene(root, 1366, 760);
+        
+        primaryStage.setTitle("Centipede");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
     }
 
     /**
