@@ -6,10 +6,8 @@
 package com.pradopolixe.centipede;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import static javafx.application.Application.launch;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -21,22 +19,16 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Centipede");
-            }
-        });
+        
+        Tablero tablero = new Tablero();
+        tablero.ponerFicha();
         
         StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
+        root.getChildren().add(tablero.getGridTablero());
+         
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Centipede");
+        primaryStage.setTitle("Tres en raya");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
