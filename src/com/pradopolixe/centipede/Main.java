@@ -22,11 +22,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
    
-        CentipedeGrafico prueba = new CentipedeGrafico();
-        prueba.champiñon(50,10);
+        CentipedeGrafico normal = new CentipedeGrafico();
         
         StackPane root = new StackPane();
-        root.getChildren().add(prueba.prueba());
+        root.getChildren().add(normal.prueba());
          
         Scene scene = new Scene(root, 300, 250);
         
