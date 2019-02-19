@@ -2,7 +2,7 @@
 package com.pradopolixe.centipede.model;
 
 public class Centipede {
-    int[][] matrizTablero = new int[20][20];
+    char [][] matrizTablero = new char[20][20];
     
     public void mostrarTablero() {
         for(int y=0; y<20; y++) {
