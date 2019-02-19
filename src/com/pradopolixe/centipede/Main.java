@@ -5,6 +5,7 @@
  */
 package com.pradopolixe.centipede;
 
+import com.pradopolixe.centipede.view.CentipedeGrafico;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
@@ -19,18 +20,19 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        
-        Tablero tablero = new Tablero();
-        tablero.ponerFicha();
+   
+        CentipedeGrafico prueba = new CentipedeGrafico();
+        prueba.champiñon();
         
         StackPane root = new StackPane();
-        root.getChildren().add(tablero.getGridTablero());
+        root.getChildren().add(prueba.prueba());
          
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 1366, 760);
         
         primaryStage.setTitle("Tres en raya");
         primaryStage.setScene(scene);
         primaryStage.show();
+        
     }
 
     /**
