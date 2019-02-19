@@ -22,7 +22,11 @@ public class CentipedeGrafico {
         return prueba;
     }
     
-    public void champiñon(){
+    public void champiñon(int x, int y){
+
+            
+        Group cabeza = new Group();
+            Rectangle cabeza = new Rectangle(10,10,5,5);
             Arc arc = new Arc();
             arc.setCenterX(150.0f);
             arc.setCenterY(150.0f);
@@ -30,11 +34,8 @@ public class CentipedeGrafico {
             arc.setRadiusY(10.0f);
             arc.setStartAngle(-45.0f);
             arc.setLength(270.0f);
-            
-//        Group cabeza = new Group();
-        Rectangle cabeza = new Rectangle();
-        prueba.add(arc,150,150); 
-        prueba.add(cabeza,250,80);
+//        prueba.add(arc,x,y); 
+//        prueba.add(cabeza,x,y);
     }
     
 }

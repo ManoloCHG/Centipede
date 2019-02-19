@@ -23,12 +23,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
    
         CentipedeGrafico prueba = new CentipedeGrafico();
-        prueba.champiñon();
+        prueba.champiñon(50,10);
         
         StackPane root = new StackPane();
         root.getChildren().add(prueba.prueba());
          
-        Scene scene = new Scene(root, 1366, 760);
+        Scene scene = new Scene(root, 300, 250);
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
