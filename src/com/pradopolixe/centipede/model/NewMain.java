@@ -6,10 +6,9 @@ public class NewMain {
 
     public static void main(String[] args) {
         Centipede centipede = new Centipede();
-        centipede.mostrarTablero();
         System.out.println("");
 
-        
+        centipede.ponerObstaculo();
         centipede.mostrarTablero();
     }
     
