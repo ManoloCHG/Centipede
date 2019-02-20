@@ -7,11 +7,11 @@ package com.pradopolixe.centipede;
 
 import com.pradopolixe.centipede.view.CentipedeGrafico;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
 
 /**
  *
@@ -29,7 +29,7 @@ public class Main extends Application {
          
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Centipede");
+        primaryStage.setTitle("Tres en raya");
         primaryStage.setScene(scene);
         primaryStage.show();
         
