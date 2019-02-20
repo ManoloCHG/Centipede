@@ -7,7 +7,6 @@ package com.pradopolixe.centipede;
 
 import com.pradopolixe.centipede.view.CentipedeGrafico;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -22,17 +21,38 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
    
-        CentipedeGrafico normal = new CentipedeGrafico();
+            TableroView tableroView = new TableroView();
+        
+            TresEnRaya tresEnRaya = new TresEnRaya();
+            tresEnRaya.ponerFicha(0, 0, '2');
+            tresEnRaya.ponerFicha(1, 2, '1');
+            tresEnRaya.ponerFicha(0, 1, '2');
+            tresEnRaya.ponerFicha(2, 2, '1');
+            
+            for(int y=0; y<3; y++) {
+            for(int x=0; x<3; x++) {
+                switch(tresEnRaya.matrizTablero[x][y]) {
+                    case '0':
+                        tableroView.rellenarCasilla(x, y);
+                        break;
+                    case '1':
+                        tableroView.ponerFicha(x, y, '1');
+                        break;
+                    case '2':
+                        tableroView.ponerFicha(x, y, '2');
+                        break;
+                }
+            }            
+        }
         
         StackPane root = new StackPane();
-        root.getChildren().add(normal.prueba());
+        root.getChildren().add(tableroView.getGridTablero());
          
         Scene scene = new Scene(root, 300, 250);
         
         primaryStage.setTitle("Tres en raya");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
     }
 
     /**
