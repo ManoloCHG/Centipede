@@ -7,8 +7,7 @@ public class NewMain {
     public static void main(String[] args) {
         Centipede centipede = new Centipede();
         System.out.println("");
-
-        centipede.ponerObstaculo();
+        centipede.ponerObstaculos();
         centipede.mostrarTablero();
     }
     
