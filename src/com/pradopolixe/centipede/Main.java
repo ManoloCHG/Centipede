@@ -22,19 +22,19 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        CentipedeGrafico tableroView = new CentipedeGrafico();
-        
+        CentipedeGrafico gridPane = new CentipedeGrafico();
         Centipede centipede = new Centipede();
+        System.out.println("");
+        centipede.mostrarTablero();
         
-        
-        for(int y=0; y<3; y++) {
-            for(int x=0; x<3; x++) {
+        for(int y=0; y<1; y++) {
+            for(int x=0; x<1; x++) {
                 switch(centipede.matrizTablero[x][y]) {
 //                    case '0':
 //                        tableroView.rellenarCasilla(x, y);
 //                        break;
                     case '5':
-                        tableroView.ponerChampiñon(x, y, '1');
+                        gridPane.ponerChampiñon(x, y, '5');
                         break;
                     
                 }
@@ -42,9 +42,9 @@ public class Main extends Application {
         }  
         
         StackPane root = new StackPane();
-        root.getChildren().add(tableroView.getGridTablero());
+        root.getChildren().add(gridPane.getGridTablero());
          
-        Scene scene = new Scene(root, 1366, 750);
+        Scene scene = new Scene(root, 1366, 768);
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
