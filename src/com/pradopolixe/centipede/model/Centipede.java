@@ -41,7 +41,7 @@ public class Centipede {
         matrizTablero[x][y] = '5';
         }
     }
-    int xEnemigo = 1;
+    int xEnemigo = 0;
     int yEnemigo = 0;
     //Colocar enemigo
     public void colocarEnemigo(){
@@ -49,19 +49,7 @@ public class Centipede {
     }
     //Mover enemigo
     public void moverEnemigo(){
-      xEnemigo ++;
-      this.colocarEnemigo();
-      switch(xEnemigo) {
-            case 20:
-                yEnemigo =+1;
-                break;
-            case 0 :
-                yEnemigo =+1;
-                break;
-        }
+        xEnemigo ++;
+        this.colocarEnemigo();
     }
-  }
-//public void moverEnemigo(){
-//        xEnemigo ++;
-//        this.colocarEnemigo();
-//    }
+}
