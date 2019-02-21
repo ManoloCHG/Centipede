@@ -14,7 +14,8 @@ public class Centipede {
                 matrizTablero[x][y] = '0';
             }
         }
-    this.ponerObstaculos();
+        this.ponerObstaculos();
+        this.colocarEnemigo();
     }
     
     public void mostrarTablero() {
@@ -26,24 +27,41 @@ public class Centipede {
             System.out.println();
         }       
     }
-    int x = 0;
-    int y = 0; 
     //colocar elementos
     //colocar obtaculo
     public void ponerObstaculos() {
         Random rnd = new Random();
         for (int i=0; i<20; i++){
-        x = rnd.nextInt(20);
-        y = rnd.nextInt(20);
+        int x = rnd.nextInt(20);
+        int y = rnd.nextInt(20);
         while (matrizTablero[x][y] == '5'){
             x = rnd.nextInt(20);
             y = rnd.nextInt(20);
         } 
         matrizTablero[x][y] = '5';
         }
-    }    
+    }
+    int xEnemigo = 1;
+    int yEnemigo = 0;
     //Colocar enemigo
     public void colocarEnemigo(){
-        matrizTablero[x][y] = '2';
+        matrizTablero[xEnemigo][yEnemigo] = '2';
     }
-}
+    //Mover enemigo
+    public void moverEnemigo(){
+      xEnemigo ++;
+      this.colocarEnemigo();
+      switch(xEnemigo) {
+            case 20:
+                yEnemigo =+1;
+                break;
+            case 0 :
+                yEnemigo =+1;
+                break;
+        }
+    }
+  }
+//public void moverEnemigo(){
+//        xEnemigo ++;
+//        this.colocarEnemigo();
+//    }
