@@ -41,15 +41,36 @@ public class Centipede {
         matrizTablero[x][y] = '5';
         }
     }
-    int xEnemigo = 0;
+    int xEnemigo = 1;
     int yEnemigo = 0;
+    int velocidadCienpies = 1;
     //Colocar enemigo
     public void colocarEnemigo(){
         matrizTablero[xEnemigo][yEnemigo] = '2';
     }
     //Mover enemigo
     public void moverEnemigo(){
-        xEnemigo ++;
-        this.colocarEnemigo();
+        if (xEnemigo == 0){
+            yEnemigo++;
+            matrizTablero[xEnemigo][yEnemigo] = '0';
+            this.colocarEnemigo();
+            velocidadCienpies = 1;
+            xEnemigo += velocidadCienpies;
+        }else{
+            if(xEnemigo == 19){
+              yEnemigo++;
+              matrizTablero[xEnemigo][yEnemigo] = '0';
+              this.colocarEnemigo();
+              velocidadCienpies = -1;
+              xEnemigo += velocidadCienpies;
+           
+            }else{
+            if (xEnemigo != 0 && xEnemigo != 19){
+                matrizTablero[xEnemigo][yEnemigo] = '0';
+                xEnemigo += velocidadCienpies;
+                this.colocarEnemigo();
+            }
+          }
+        }
     }
 }
