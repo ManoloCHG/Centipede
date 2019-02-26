@@ -15,7 +15,7 @@ public class Centipede {
             }
         }
         this.ponerObstaculos();
-        this.colocarEnemigo();
+        //this.colocarEnemigo();
     }
     
     public void mostrarTablero() {
@@ -41,34 +41,36 @@ public class Centipede {
         matrizTablero[x][y] = '5';
         }
     }
+   
+    //Colocar enemigo
+//    public void colocarEnemigo(){
+//        matrizTablero[xEnemigo][yEnemigo] = '2';
+//    }
+    //Mover enemigo
     int xEnemigo = 1;
     int yEnemigo = 0;
     int velocidadCienpies = 1;
-    //Colocar enemigo
-    public void colocarEnemigo(){
-        matrizTablero[xEnemigo][yEnemigo] = '2';
-    }
-    //Mover enemigo
     public void moverEnemigo(){
         if (xEnemigo == 0){
-            yEnemigo++;
             matrizTablero[xEnemigo][yEnemigo] = '0';
-            this.colocarEnemigo();
+            yEnemigo ++;
+            matrizTablero[xEnemigo][yEnemigo] = '0';
             velocidadCienpies = 1;
             xEnemigo += velocidadCienpies;
+            //this.colocarEnemigo();
         }else{
             if(xEnemigo == 19){
+              matrizTablero[xEnemigo][yEnemigo] = '0';
               yEnemigo++;
               matrizTablero[xEnemigo][yEnemigo] = '0';
-              this.colocarEnemigo();
               velocidadCienpies = -1;
               xEnemigo += velocidadCienpies;
-           
+              //this.colocarEnemigo();
             }else{
             if (xEnemigo != 0 && xEnemigo != 19){
                 matrizTablero[xEnemigo][yEnemigo] = '0';
                 xEnemigo += velocidadCienpies;
-                this.colocarEnemigo();
+                //this.colocarEnemigo();
             }
           }
         }
