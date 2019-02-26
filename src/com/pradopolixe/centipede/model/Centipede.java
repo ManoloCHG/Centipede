@@ -22,7 +22,15 @@ public class Centipede {
         //Mostrar la matriz
         for(int y=0; y<20; y++) {
             for(int x=0; x<20; x++) {
-                System.out.print(matrizTablero[x][y]);
+                if (matrizTablero[x][y] == matrizTablero[xEnemigo][yEnemigo]){
+                    matrizTablero [x][y] = '2';
+                     System.out.print(matrizTablero[x][y]);
+                }else{
+                    if (matrizTablero[x][y] != matrizTablero[xEnemigo][yEnemigo]){
+                        System.out.print(matrizTablero[x][y]);
+            }
+          }
+                
             }
             System.out.println();
         }       
@@ -52,23 +60,23 @@ public class Centipede {
     int velocidadCienpies = 1;
     public void moverEnemigo(){
         if (xEnemigo == 0){
-            matrizTablero[xEnemigo][yEnemigo] = '0';
+            //matrizTablero[xEnemigo][yEnemigo] = '0';
             yEnemigo ++;
-            matrizTablero[xEnemigo][yEnemigo] = '0';
+            //matrizTablero[xEnemigo][yEnemigo] = '0';
             velocidadCienpies = 1;
             xEnemigo += velocidadCienpies;
             //this.colocarEnemigo();
         }else{
             if(xEnemigo == 19){
-              matrizTablero[xEnemigo][yEnemigo] = '0';
+              //matrizTablero[xEnemigo][yEnemigo] = '0';
               yEnemigo++;
-              matrizTablero[xEnemigo][yEnemigo] = '0';
+              //matrizTablero[xEnemigo][yEnemigo] = '0';
               velocidadCienpies = -1;
               xEnemigo += velocidadCienpies;
               //this.colocarEnemigo();
             }else{
             if (xEnemigo != 0 && xEnemigo != 19){
-                matrizTablero[xEnemigo][yEnemigo] = '0';
+                //matrizTablero[xEnemigo][yEnemigo] = '0';
                 xEnemigo += velocidadCienpies;
                 //this.colocarEnemigo();
             }
