@@ -19,9 +19,10 @@ public class CentipedeGrafico {
     }
     
     public void ponerChampiñon(int x, int y, char obstaculo) {
-        if(obstaculo == '5') {
-            Circle circleFicha = new Circle(20, Color.RED);
-            gridTablero.add(circleFicha, x, y);
+        Rectangle casilla = new Rectangle (0, 0, 100, 100);
+        casilla.setFill(Color.BEIGE);
+        casilla.setStroke(Color.BROWN);
+        gridTablero.add(casilla,x,y);
         }
     }
     
@@ -30,7 +31,7 @@ public class CentipedeGrafico {
 //        gridTablero.add(r, x, y);
 //    }
     
-}
+//}
 
      
     
