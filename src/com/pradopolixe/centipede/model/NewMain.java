@@ -8,8 +8,9 @@ public class NewMain {
         Centipede centipede = new Centipede();
         System.out.println("");
         centipede.mostrarTablero();
-        for (int i=0; i<40; i++){
+        for (int i=0; i<15; i++){
         centipede.moverEnemigo();
+        centipede.moverNave(4);
         System.out.println("");
         centipede.mostrarTablero();
         }
