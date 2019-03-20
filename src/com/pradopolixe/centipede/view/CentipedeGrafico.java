@@ -18,23 +18,29 @@ public class CentipedeGrafico {
         return gridTablero;
     }
     
-    public void ponerChampiñon(int x, int y, char obstaculo) {
+    public void ponerChampiñon(int x, int y) {
         Rectangle casilla = new Rectangle (0, 0, 100, 100);
         casilla.setFill(Color.BEIGE);
         casilla.setStroke(Color.BROWN);
-        gridTablero.add(casilla,x,y);
-        }
+        gridTablero.add(casilla,1,0);
     }
     
-//    public void rellenarCasilla(int x, int y) {
-//        Rectangle r = new Rectangle(40, 40, Color.LIGHTGRAY);
-//        gridTablero.add(r, x, y);
-//    }
-    
-//}
+    public void mostrarTablero(){
+        for(int y=0; y<7; y++){
+            for(int x=0; x<7; x++){
+                dibujarTablero(x,y);
+            }
+        }
+    }
+
+    private void dibujarTablero(int x, int y) {
+        
+        }
+    }
+
 
      
-    
+//    
 //    public void champiñon(int x, int y, char seta){
 //        
 //        if(seta == '1'){

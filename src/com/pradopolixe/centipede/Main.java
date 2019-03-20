@@ -9,7 +9,9 @@ import com.pradopolixe.centipede.view.CentipedeGrafico;
 import com.pradopolixe.centipede.model.Centipede;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -27,24 +29,23 @@ public class Main extends Application {
         System.out.println("");
         centipede.mostrarTablero();
         
-        for(int y=0; y<1; y++) {
-            for(int x=0; x<1; x++) {
-                switch(centipede.matrizTablero[x][y]) {
-//                    case '0':
-//                        tableroView.rellenarCasilla(x, y);
-//                        break;
-                    case '5':
-                        gridPane.ponerChampiñon(x, y, '5');
-                        break;
-                    
-                }
-            }            
-        }  
         
+        
+        
+        // Contenedor para alinear el tablero en centro horizontalmente
+        HBox hBox = new HBox(gridPane.getGridTablero());
+        hBox.setAlignment(Pos.CENTER);
+        
+
         StackPane root = new StackPane();
         root.getChildren().add(gridPane.getGridTablero());
+        centipede.mostrarTablero();
+        
+//        CentipedeGrafico.ponerChampiñon();
+        
+        
          
-        Scene scene = new Scene(root, 1366, 768);
+        Scene scene = new Scene(root, 700, 700);
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
