@@ -28,7 +28,11 @@ public class Centipede {
                     if (x == xNave && y == yNave){
                         System.out.print("3");
                     }else{
-                      System.out.print(matrizTablero[x][y]);  
+                        if (disparo == true && x == xDisparo && y == yDisparo){
+                            System.out.print("4");
+                        }else{
+                            System.out.print(matrizTablero[x][y]);
+                        }
                     }
                 } 
             }
@@ -121,5 +125,18 @@ public class Centipede {
                 }
             break;
         }
+    }
+    int yDisparo = 0;
+    int xDisparo = 0;
+    boolean disparo = false;
+    public void disparar(){
+        disparo = true;
+        yDisparo = yNave-1;
+        xDisparo = xNave;
+        System.out.println(disparo);
+    }
+   
+    public void moverdisparo(){
+         yDisparo --;
     }
 }
