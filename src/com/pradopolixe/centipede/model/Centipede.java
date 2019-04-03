@@ -15,7 +15,6 @@ public class Centipede {
             }
         }
         this.ponerObstaculos();
-        //this.colocarEnemigo();
     }
     
     public void mostrarTablero() {
@@ -39,6 +38,7 @@ public class Centipede {
             System.out.println();
         }       
     }
+    
     //colocar elementos
     //colocar obtaculo
     //Valor de los obtaculos = 5
@@ -54,6 +54,7 @@ public class Centipede {
         matrizTablero[x][y] = '5';
         }
     }
+    
     //Mover enemigo
     //Valor del enemigo = 2
     int xEnemigo = 1;
@@ -89,6 +90,7 @@ public class Centipede {
             }
         }
     }
+    
     int xNave = 9;
     int yNave = 19;
     //Valor de la Nave = 3
@@ -126,6 +128,7 @@ public class Centipede {
             break;
         }
     }
+    
     int yDisparo = 0;
     int xDisparo = 0;
     boolean disparo = false;
