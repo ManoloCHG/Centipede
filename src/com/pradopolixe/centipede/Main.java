@@ -13,19 +13,23 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Arc;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
  *
- * @author javier
+ * @author josemanuel
  */
 public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
         
-        CentipedeGrafico gridPane = new CentipedeGrafico();
-        Centipede centipede = new Centipede();
+        CentipedeGrafico centipede = new CentipedeGrafico();
+        centipede.ponerChampiñon(0,0);
+        
+        centipede.getGridTablero();
         System.out.println("");
         centipede.mostrarTablero();
         
@@ -33,12 +37,12 @@ public class Main extends Application {
         
         
         // Contenedor para alinear el tablero en centro horizontalmente
-        HBox hBox = new HBox(gridPane.getGridTablero());
+        HBox hBox = new HBox(centipede.getGridTablero());
         hBox.setAlignment(Pos.CENTER);
         
 
         StackPane root = new StackPane();
-        root.getChildren().add(gridPane.getGridTablero());
+        root.getChildren().add(centipede.getGridTablero());
         centipede.mostrarTablero();
         
 //        CentipedeGrafico.ponerChampiñon();
@@ -56,7 +60,18 @@ public class Main extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+//        CentipedeGrafico.ponerChampiñon();
         launch(args);
     }
     
 }
+
+//        Arc arc = new Arc();
+//            arc.setCenterX(150.0f);
+//            arc.setCenterY(150.0f);
+//            arc.setRadiusX(10.0f);
+//            arc.setRadiusY(10.0f);
+//            arc.setStartAngle(-45.0f);
+//            arc.setLength(270.0f);
+//            
+//        Rectangle prueba = new Rectangle(145,155,10,10);
