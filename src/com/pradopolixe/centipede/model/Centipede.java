@@ -1,7 +1,10 @@
 
 package com.pradopolixe.centipede.model;
 
+import java.util.ArrayList;
 import java.util.Random;
+import javafx.scene.effect.Light.Point;
+import javafx.scene.paint.Color;
 
 public class Centipede {
   
@@ -55,9 +58,28 @@ public class Centipede {
         }
     }
     
+    //Arraylist del enemigo
+    public void Enemigo(){
+        Point point = new Point();
+        ArrayList<Point> listaEnemigo = new ArrayList();
+        listaEnemigo.add (new Point(7,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(6,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(5,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(4,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(3,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(2,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(1,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(0,0,0,Color.BLACK));
+        listaEnemigo.remove (7);
+        Point p = listaEnemigo.get(0);
+        for(int i=0; i<listaEnemigo.size(); i++)
+            System.out.println(p.getX());
+            System.out.println(p.getY());
+    }
+
     //Mover enemigo
     //Valor del enemigo = 2
-    int xEnemigo = 1;
+    int xEnemigo = 7;
     int yEnemigo = 0;
     int velocidadCienpies = 1;
     public void moverEnemigo(){

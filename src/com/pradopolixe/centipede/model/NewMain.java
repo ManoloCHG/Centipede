@@ -16,6 +16,7 @@ public class NewMain {
             centipede.moverdisparo();
             System.out.println("");
             centipede.mostrarTablero();
+            centipede.Enemigo();
         }
     }           
 }
