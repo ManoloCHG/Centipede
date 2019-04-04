@@ -21,43 +21,49 @@ public class CentipedeGrafico {
     }
     
     public void ponerChampiñon(int x, int y) {
-        Rectangle casilla = new Rectangle (50, 50);
-        casilla.setFill(Color.BEIGE);
-        casilla.setStroke(Color.BROWN);
-        gridTablero.add(casilla,x,y);
+//        Rectangle casilla = new Rectangle (50, 50);
+//        casilla.setFill(Color.BEIGE);
+//        casilla.setStroke(Color.BROWN);
+//        gridTablero.add(casilla,x,y);
 //        Circle ola = new Circle (20, Color.CHOCOLATE);
 //        ola.setFill(Color.BURLYWOOD);
 //        gridTablero.add(ola,x,y);
 
-    Group grupito = new Group();
-        Arc arc = new Arc();
-            arc.setCenterX(150.0f);
-            arc.setCenterY(150.0f);
-            arc.setRadiusX(10.0f);
-            arc.setRadiusY(10.0f);
-            arc.setStartAngle(-45.0f);
-            arc.setLength(270.0f);
-        arc.setFill(Color.DEEPPINK);
-        gridTablero.add(grupito,x,y);
-        Rectangle prueba = new Rectangle(145,155,10,10);
-        prueba.setFill(Color.DEEPPINK);
-        Circle redondo = new Circle(5,Color.BLUE);
-        grupito.getChildren().add(arc);
-        grupito.getChildren().add(prueba);
+    Group champiñon = new Group();
+        Arc cabezaChampiñon = new Arc();
+            cabezaChampiñon.setCenterX(150.0f);
+            cabezaChampiñon.setCenterY(150.0f);
+            cabezaChampiñon.setRadiusX(10.0f);
+            cabezaChampiñon.setRadiusY(10.0f);
+            cabezaChampiñon.setStartAngle(-45.0f);
+            cabezaChampiñon.setLength(270.0f);
+        cabezaChampiñon.setFill(Color.DEEPPINK);
+        gridTablero.add(champiñon,x,y);
+        Rectangle cuerpoChampiñon = new Rectangle(145,155,10,10);
+        cuerpoChampiñon.setFill(Color.DEEPPINK);
+//        Circle redondo = new Circle(5,Color.BLUE);
+        champiñon.getChildren().add(cabezaChampiñon);
+        champiñon.getChildren().add(cuerpoChampiñon);
         
     }
     
     
     public void mostrarTablero(){
-        for(int y=0; y<7; y++){
-            for(int x=0; x<7; x++){
+        for(int y=0; y<33; y++){
+            for(int x=0; x<33; x++){
                 dibujarTablero(x,y);
             }
         }
     }
 
     public void dibujarTablero(int x, int y) {
-        
+            Rectangle prueba = new Rectangle(0, 0, 20, 20);
+            // Le damos color a la casilla
+            prueba.setFill(Color.BEIGE);
+            // Le damos color al borde
+            prueba.setStroke(Color.BROWN);
+            // Añadimos el tablero al panel 
+            gridTablero.add(prueba, x, y);
         }
     }
 

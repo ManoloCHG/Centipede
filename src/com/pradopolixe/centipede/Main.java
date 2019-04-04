@@ -27,29 +27,30 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         
         CentipedeGrafico centipede = new CentipedeGrafico();
-        centipede.ponerChampiñon(0,0);
+
         
         centipede.getGridTablero();
         System.out.println("");
         centipede.mostrarTablero();
+        centipede.ponerChampiñon(10,5);
         
         
         
         
         // Contenedor para alinear el tablero en centro horizontalmente
-        HBox hBox = new HBox(centipede.getGridTablero());
-        hBox.setAlignment(Pos.CENTER);
+//        HBox hBox = new HBox(centipede.getGridTablero());
+//        hBox.setAlignment(Pos.CENTER);
         
 
         StackPane root = new StackPane();
         root.getChildren().add(centipede.getGridTablero());
-        centipede.mostrarTablero();
+//        centipede.mostrarTablero();
         
 //        CentipedeGrafico.ponerChampiñon();
         
         
          
-        Scene scene = new Scene(root, 700, 700);
+        Scene scene = new Scene(root, 693, 693);
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
