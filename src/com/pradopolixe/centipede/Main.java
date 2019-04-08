@@ -32,7 +32,11 @@ public class Main extends Application {
         centipede.getGridTablero();
         System.out.println("");
         centipede.mostrarTablero();
-        centipede.ponerChampiñon(10,5);
+        centipede.ponerChampiñon(20,20);
+        centipede.cienpies(15,5);
+        centipede.cienpies2(16,5);
+        centipede.patas(16,5);
+        
         
         
         
