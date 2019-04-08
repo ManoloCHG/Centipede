@@ -60,6 +60,7 @@ public class Centipede {
     
     //Arraylist del enemigo
     public void Enemigo(){
+        int s = 0;
         Point point = new Point();
         ArrayList<Point> listaEnemigo = new ArrayList();
         listaEnemigo.add (new Point(7,0,0,Color.BLACK));
@@ -71,10 +72,11 @@ public class Centipede {
         listaEnemigo.add (new Point(1,0,0,Color.BLACK));
         listaEnemigo.add (new Point(0,0,0,Color.BLACK));
         listaEnemigo.remove (7);
-        Point p = listaEnemigo.get(0);
-        for(int i=0; i<listaEnemigo.size(); i++)
+        for(int i=0; i<listaEnemigo.size(); i++ ){
+            Point p = listaEnemigo.get(i);
             System.out.println(p.getX());
             System.out.println(p.getY());
+        }
     }
 
     //Mover enemigo
