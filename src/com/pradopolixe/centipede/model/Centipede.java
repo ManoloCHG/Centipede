@@ -9,21 +9,21 @@ import javafx.scene.paint.Color;
 public class Centipede {
   
     //Creacion matriz
-    public char [][] matrizTablero = new char[20][20];
+    public char [][] matrizTablero = new char[33][33];
     // Rellenar matriz con 0
     public Centipede() {
-        for(int y=0; y<20; y++) {
-            for(int x=0; x<20; x++) {
+        for(int y=0; y<33; y++) {
+            for(int x=0; x<33; x++) {
                 matrizTablero[x][y] = '0';
             }
         }
         this.ponerObstaculos();
     }
-    
+    ArrayList<Point> listaEnemigo = new ArrayList();
     public void mostrarTablero() {
         //Mostrar la matriz y enemigo 
-        for(int y=0; y<20; y++) {
-            for(int x=0; x<20; x++) {
+        for(int y=0; y<33; y++) {
+            for(int x=0; x<33; x++) {
                 if (x == xEnemigo && y == yEnemigo){
                     System.out.print("2");
                 }else{
@@ -41,18 +41,19 @@ public class Centipede {
             System.out.println();
         }       
     }
-    
+    int xEnemigo = 7;
+    int yEnemigo = 0;
     //colocar elementos
     //colocar obtaculo
     //Valor de los obtaculos = 5
     public void ponerObstaculos() {
         Random rnd = new Random();
-        for (int i=0; i<20; i++){
-        int x = rnd.nextInt(20);
-        int y = rnd.nextInt(16);
+        for (int i=0; i<33; i++){
+        int x = rnd.nextInt(33);
+        int y = rnd.nextInt(29);
         while (matrizTablero[x][y] == '5'){
-            x = rnd.nextInt(20);
-            y = rnd.nextInt(16);
+            x = rnd.nextInt(33);
+            y = rnd.nextInt(41);
         } 
         matrizTablero[x][y] = '5';
         }
@@ -62,8 +63,7 @@ public class Centipede {
     public void Enemigo(){
         int s = 0;
         Point point = new Point();
-        ArrayList<Point> listaEnemigo = new ArrayList();
-        listaEnemigo.add (new Point(7,0,0,Color.BLACK));
+        listaEnemigo.add (new Point(xEnemigo,yEnemigo,0,Color.BLACK));
         listaEnemigo.add (new Point(6,0,0,Color.BLACK));
         listaEnemigo.add (new Point(5,0,0,Color.BLACK));
         listaEnemigo.add (new Point(4,0,0,Color.BLACK));
@@ -71,18 +71,13 @@ public class Centipede {
         listaEnemigo.add (new Point(2,0,0,Color.BLACK));
         listaEnemigo.add (new Point(1,0,0,Color.BLACK));
         listaEnemigo.add (new Point(0,0,0,Color.BLACK));
-        listaEnemigo.remove (7);
         for(int i=0; i<listaEnemigo.size(); i++ ){
             Point p = listaEnemigo.get(i);
-            System.out.println(p.getX());
-            System.out.println(p.getY());
+            System.out.println("PX:"+p.getX()+ ","+"PY:"+ p.getY());
         }
     }
-
     //Mover enemigo
     //Valor del enemigo = 2
-    int xEnemigo = 7;
-    int yEnemigo = 0;
     int velocidadCienpies = 1;
     public void moverEnemigo(){
         int xFutura = xEnemigo + velocidadCienpies;
@@ -91,7 +86,7 @@ public class Centipede {
             velocidadCienpies = 1;
             xEnemigo += velocidadCienpies;
         }else{
-            if(xEnemigo == 19){
+            if(xEnemigo == 32){
               yEnemigo++;
               velocidadCienpies = -1;
               xEnemigo += velocidadCienpies;
@@ -106,17 +101,18 @@ public class Centipede {
                         velocidadCienpies = 1;
                         xEnemigo += velocidadCienpies;
                     }else{
-                        if (xEnemigo != 0 && xEnemigo != 19){
+                        if (xEnemigo != 0 && xEnemigo != 32){
                         xEnemigo += velocidadCienpies;
                         }
                     }
                 }
             }
         }
+    listaEnemigo.remove (7);
     }
     
     int xNave = 9;
-    int yNave = 19;
+    int yNave = 32;
     //Valor de la Nave = 3
     public void moverNave(int direcNave) {  
         try {
@@ -128,13 +124,13 @@ public class Centipede {
         switch (direcNave){
             case 1 :
              //Movimiento para Arriba = 1
-                if (yNave >= 17){
+                if (yNave >= 29){
                 yNave --;
                 }
             break;
             case 2 :
             //Movimiento para Abajo = 2
-                if (yNave < 19){
+                if (yNave < 32){
                 yNave ++;
                 }
             break;
@@ -146,7 +142,7 @@ public class Centipede {
             break;
             case 4 :
             //Movimiento para Derecha = 4
-                if (xNave < 19){
+                if (xNave < 32){
                 xNave ++;
                 }
             break;
