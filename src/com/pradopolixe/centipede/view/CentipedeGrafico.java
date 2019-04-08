@@ -21,32 +21,51 @@ public class CentipedeGrafico {
     }
     
     public void ponerChampiñon(int x, int y) {
-//        Rectangle casilla = new Rectangle (50, 50);
-//        casilla.setFill(Color.BEIGE);
-//        casilla.setStroke(Color.BROWN);
-//        gridTablero.add(casilla,x,y);
-//        Circle ola = new Circle (20, Color.CHOCOLATE);
-//        ola.setFill(Color.BURLYWOOD);
-//        gridTablero.add(ola,x,y);
-
-    Group champiñon = new Group();
-        Arc cabezaChampiñon = new Arc();
-            cabezaChampiñon.setCenterX(150.0f);
-            cabezaChampiñon.setCenterY(150.0f);
-            cabezaChampiñon.setRadiusX(10.0f);
-            cabezaChampiñon.setRadiusY(10.0f);
-            cabezaChampiñon.setStartAngle(-45.0f);
-            cabezaChampiñon.setLength(270.0f);
-        cabezaChampiñon.setFill(Color.DEEPPINK);
+        Arc champiñon = new Arc();
+            champiñon.setCenterX(150.0f);
+            champiñon.setCenterY(150.0f);
+            champiñon.setRadiusX(10.0f);
+            champiñon.setRadiusY(10.0f);
+            champiñon.setStartAngle(-45.0f);
+            champiñon.setLength(270.0f);
+        champiñon.setFill(Color.DEEPPINK);
         gridTablero.add(champiñon,x,y);
-        Rectangle cuerpoChampiñon = new Rectangle(145,155,10,10);
-        cuerpoChampiñon.setFill(Color.DEEPPINK);
-//        Circle redondo = new Circle(5,Color.BLUE);
-        champiñon.getChildren().add(cabezaChampiñon);
-        champiñon.getChildren().add(cuerpoChampiñon);
-        
+//        Rectangle cuerpoChampiñon = new Rectangle(145,155,10,10);
+        champiñon.setScaleX(0.8);
+        champiñon.setScaleY(0.8);
     }
     
+    
+    public void cienpies(int x, int y){
+        Group bicho = new Group();
+            Circle cabezaCienpies = new Circle(50, 50, 10, Color.GREEN);
+            Circle ojo1 = new Circle (49.5, 46, 2, Color.BROWN);
+            Circle ojo2 = new Circle (49.5, 53, 2, Color.BROWN);
+//            Circle cuerpoCienpies = new Circle (64, 50, 8, Color.GREEN);
+//            Rectangle pata1 = new Rectangle (63, 39, 3, 6);
+//            Rectangle pata2 = new Rectangle (63, 54, 3, 6);
+//            pata1.setFill(Color.GREEN);
+//            pata2.setFill(Color.GREEN);
+            bicho.getChildren().add(cabezaCienpies);
+            bicho.getChildren().add(ojo1);
+            bicho.getChildren().add(ojo2);
+//            bicho.getChildren().add(cuerpoCienpies);
+//            bicho.getChildren().add(pata1);
+//            bicho.getChildren().add(pata2);
+            gridTablero.add(bicho,x,y);      
+    }
+    
+    public void cienpies2 (int x, int y){
+        Circle cuerpoCienpies = new Circle (64, 50, 8, Color.GREEN);
+        gridTablero.add(cuerpoCienpies,x,y);  
+    }
+    public void patas (int x, int y){
+            Rectangle pata1 = new Rectangle (63, 39, 3, 6);
+            Rectangle pata2 = new Rectangle (63, 54, 3, 6);
+            pata1.setFill(Color.GREEN);
+            pata2.setFill(Color.GREEN);
+            gridTablero.add(pata2,x,y); 
+    }
     
     public void mostrarTablero(){
         for(int y=0; y<33; y++){
@@ -59,7 +78,7 @@ public class CentipedeGrafico {
     public void dibujarTablero(int x, int y) {
             Rectangle prueba = new Rectangle(0, 0, 20, 20);
             // Le damos color a la casilla
-            prueba.setFill(Color.BEIGE);
+            prueba.setFill(Color.BLACK);
             // Le damos color al borde
             prueba.setStroke(Color.BROWN);
             // Añadimos el tablero al panel 
