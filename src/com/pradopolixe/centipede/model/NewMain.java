@@ -10,9 +10,10 @@ public class NewMain {
         centipede.mostrarTablero();
         centipede.disparar();
         centipede.mostrarTablero();
+        centipede.Enemigo();
         for (int i=0; i<15; i++){
-            centipede.Enemigo();
             centipede.moverEnemigo();
+            centipede.Enemigo();
             centipede.moverNave(3);
             centipede.moverdisparo();
             System.out.println("");
