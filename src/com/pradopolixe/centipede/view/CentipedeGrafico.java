@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 
 public class CentipedeGrafico {
@@ -59,13 +60,31 @@ public class CentipedeGrafico {
         Circle cuerpoCienpies = new Circle (64, 50, 8, Color.GREEN);
         gridTablero.add(cuerpoCienpies,x,y);  
     }
-    public void patas (int x, int y){
-            Rectangle pata1 = new Rectangle (63, 39, 3, 6);
-            Rectangle pata2 = new Rectangle (63, 54, 3, 6);
-            pata1.setFill(Color.GREEN);
-            pata2.setFill(Color.GREEN);
-            gridTablero.add(pata2,x,y); 
+    
+    public void parteNave (int x, int y){
+        Polygon nave = new Polygon (new double[]{
+            150.0, 155.0,
+            140.0, 170.0,
+            150.0, 170.0,
+            150.0, 155.0,
+            160.0, 170.0,
+            150.0, 170.0,
+            150.0, 175.0,
+            140.0, 170.0,
+            150.0, 170.0,
+            150.0, 175.0,
+            160.0, 170.0,
+            150.0, 170.0,});
+        nave.setFill(Color.LIGHTBLUE);
+        gridTablero.add(nave,x,y);
     }
+//    public void patas (int x, int y){
+//            Rectangle pata1 = new Rectangle (63, 39, 3, 6);
+//            Rectangle pata2 = new Rectangle (63, 54, 3, 6);
+//            pata1.setFill(Color.GREEN);
+//            pata2.setFill(Color.GREEN);
+//            gridTablero.add(pata2,x,y); 
+//    }
     
     public void mostrarTablero(){
         for(int y=0; y<33; y++){
