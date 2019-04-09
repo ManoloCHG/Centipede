@@ -34,7 +34,7 @@ public class Main extends Application {
 //        System.out.println("");
         centipede.mostrarTablero();
 //        centipede.ponerChampiñon(20,20);
-//        centipede.cienpies(15,5);
+        centipede.cienpies(15,5);
 //        centipede.cienpies2(16,5);
 ////        centipede.patas(16,5);
 //        centipede.parteNave(18,31);
@@ -46,21 +46,24 @@ public class Main extends Application {
         for(int y=0; y<33; y++) {
             for(int x=0; x<33; x++) {
                 switch(union.matrizTablero[x][y]) {
-                    case '2':
-                        centipede.cienpies(x,y);
-                    break;
-                    case '3':
-                        centipede.parteNave(x, y);
-                    break;
-                    case '4':
-                        centipede.disparo(x, y);
-                    break;
-//                    case '5':
-//                        centipede.ponerChampiñon(x,y);
+//                    case '2':
+//                        centipede.cienpies(x,y);
 //                    break;
+//                    case '3':
+//                        centipede.parteNave(x, y);
+//                    break;
+//                    case '4':
+//                        centipede.disparo(x, y);
+//                    break;
+                    case '5':
+                        centipede.ponerChampiñon(x,y);
+                    break;
                 }
             }            
-        } 
+        }
+    prueba = new AnimationTimer(){
+        
+    }
         
         
         // Contenedor para alinear el tablero en centro horizontalmente
