@@ -11,9 +11,8 @@ public class NewMain {
         centipede.disparar();
         centipede.mostrarTablero();
         centipede.Enemigo();
-        for (int i=0; i<15; i++){
+        for (int i=0; i<20; i++){
             centipede.moverEnemigo();
-            centipede.Enemigo();
             centipede.moverNave(3);
             centipede.moverdisparo();
             System.out.println("");
