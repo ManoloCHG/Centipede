@@ -41,8 +41,7 @@ public class Centipede {
             System.out.println();
         }       
     }
-    int xEnemigo = 7;
-    int yEnemigo = 0;
+    
     //colocar elementos
     //colocar obtaculo
     //Valor de los obtaculos = 5
@@ -70,14 +69,12 @@ public class Centipede {
         listaEnemigo.add (new Point(3,0,0,Color.BLACK));
         listaEnemigo.add (new Point(2,0,0,Color.BLACK));
         listaEnemigo.add (new Point(1,0,0,Color.BLACK));
-        listaEnemigo.add (new Point(0,0,0,Color.BLACK));
-        for(int i=0; i<listaEnemigo.size(); i++ ){
-            Point p = listaEnemigo.get(i);
-            System.out.println("PX:"+p.getX()+ ","+"PY:"+ p.getY());
-        }
+        System.out.println("Posicion Inicial");
     }
     //Mover enemigo
     //Valor del enemigo = 2
+    int xEnemigo = 7;
+    int yEnemigo = 0;
     int velocidadCienpies = 1;
     public void moverEnemigo(){
         int xFutura = xEnemigo + velocidadCienpies;
@@ -108,7 +105,12 @@ public class Centipede {
                 }
             }
         }
-    listaEnemigo.remove (7);
+        listaEnemigo.add (0,new Point(xEnemigo,yEnemigo,0,Color.BLACK));
+        listaEnemigo.remove (7);
+        for(int i=0; i<listaEnemigo.size(); i++ ){
+            Point p = listaEnemigo.get(i);
+            System.out.println("PX:"+p.getX()+ ","+"PY:"+ p.getY());
+        }
     }
     
     int xNave = 9;
@@ -161,5 +163,15 @@ public class Centipede {
    
     public void moverdisparo(){
          yDisparo --;
+    }
+    public boolean colisiondisparo(){
+        boolean choque = false;
+        for(int i=0; i<listaEnemigo.size(); i++ ){
+            Point p = listaEnemigo.get(i);
+            if (p.getX()== xDisparo && p.getY()==yDisparo){
+            choque = true;
+            }
+        }
+        return choque;
     }
 }
