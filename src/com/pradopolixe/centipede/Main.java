@@ -35,7 +35,8 @@ public class Main extends Application {
         centipede.ponerChampiñon(20,20);
         centipede.cienpies(15,5);
         centipede.cienpies2(16,5);
-        centipede.patas(16,5);
+//        centipede.patas(16,5);
+        centipede.parteNave(18,31);
         
         
         
