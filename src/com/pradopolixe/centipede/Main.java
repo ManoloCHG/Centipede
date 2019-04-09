@@ -27,19 +27,40 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         
         CentipedeGrafico centipede = new CentipedeGrafico();
+        Centipede union = new Centipede();
 
         
-        centipede.getGridTablero();
-        System.out.println("");
+//        centipede.getGridTablero();
+//        System.out.println("");
         centipede.mostrarTablero();
-        centipede.ponerChampiñon(20,20);
-        centipede.cienpies(15,5);
-        centipede.cienpies2(16,5);
-//        centipede.patas(16,5);
-        centipede.parteNave(18,31);
+//        centipede.ponerChampiñon(20,20);
+//        centipede.cienpies(15,5);
+//        centipede.cienpies2(16,5);
+////        centipede.patas(16,5);
+//        centipede.parteNave(18,31);
+//        centipede.disparo(18,30);
+//        
+//        union.ponerObstaculos();
+//        
         
-        
-        
+        for(int y=0; y<33; y++) {
+            for(int x=0; x<33; x++) {
+                switch(union.matrizTablero[x][y]) {
+                    case '2':
+                        centipede.cienpies(x,y);
+                    break;
+                    case '3':
+                        centipede.parteNave(x, y);
+                    break;
+                    case '4':
+                        centipede.disparo(x, y);
+                    break;
+//                    case '5':
+//                        centipede.ponerChampiñon(x,y);
+//                    break;
+                }
+            }            
+        } 
         
         
         // Contenedor para alinear el tablero en centro horizontalmente
@@ -71,13 +92,3 @@ public class Main extends Application {
     }
     
 }
-
-//        Arc arc = new Arc();
-//            arc.setCenterX(150.0f);
-//            arc.setCenterY(150.0f);
-//            arc.setRadiusX(10.0f);
-//            arc.setRadiusY(10.0f);
-//            arc.setStartAngle(-45.0f);
-//            arc.setLength(270.0f);
-//            
-//        Rectangle prueba = new Rectangle(145,155,10,10);
