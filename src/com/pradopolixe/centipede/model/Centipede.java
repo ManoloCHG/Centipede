@@ -10,7 +10,7 @@ public class Centipede {
   
     //Creacion matriz
     public char [][] matrizTablero = new char[33][33];
-    // Rellenar matriz con 0
+    // Rellenar matriz con 0 (Metodo cosntructor)
     public Centipede() {
         for(int y=0; y<33; y++) {
             for(int x=0; x<33; x++) {
@@ -21,7 +21,7 @@ public class Centipede {
     }
     ArrayList<Point> listaEnemigo = new ArrayList();
     public void mostrarTablero() {
-        //Mostrar la matriz y enemigo 
+        //Mostrar la matriz y diferentes elementos colocados sobre la matriz
         for(int y=0; y<33; y++) {
             for(int x=0; x<33; x++) {
                 if (x == xEnemigo && y == yEnemigo){
@@ -42,8 +42,8 @@ public class Centipede {
         }       
     }
     
-    //colocar elementos
-    //colocar obtaculo
+    //---------------------------colocar elementos-------------------------
+    //colocar obtaculo de manera aleatoria (elementos fijos)
     //Valor de los obtaculos = 5
     public void ponerObstaculos() {
         Random rnd = new Random();
@@ -58,7 +58,7 @@ public class Centipede {
         }
     }
     
-    //Arraylist del enemigo
+    //Arraylist del enemigo (cuerpo del enemigo)
     public void Enemigo(){
         int s = 0;
         Point point = new Point();
@@ -71,7 +71,7 @@ public class Centipede {
         listaEnemigo.add (new Point(1,0,0,Color.BLACK));
         System.out.println("Posicion Inicial");
     }
-    //Mover enemigo
+    //Mover enemigo con todas las colisiones 
     //Valor del enemigo = 2
     int xEnemigo = 7;
     int yEnemigo = 0;
@@ -105,6 +105,7 @@ public class Centipede {
                 }
             }
         }
+        //este bucle comprueva todas las posiciones del cienpies depues de realizar un movimiento 
         listaEnemigo.add (0,new Point(xEnemigo,yEnemigo,0,Color.BLACK));
         listaEnemigo.remove (7);
         for(int i=0; i<listaEnemigo.size(); i++ ){
@@ -116,6 +117,7 @@ public class Centipede {
     int xNave = 9;
     int yNave = 32;
     //Valor de la Nave = 3
+    // con los diferentes movimientos  
     public void moverNave(int direcNave) {  
         try {
         } catch(ArrayIndexOutOfBoundsException e) {
@@ -150,7 +152,7 @@ public class Centipede {
             break;
         }
     }
-    
+    // el disparo  que va a realizar la nave
     int yDisparo = 0;
     int xDisparo = 0;
     boolean disparo = false;
@@ -160,10 +162,11 @@ public class Centipede {
         xDisparo = xNave;
         System.out.println(disparo);
     }
-   
+   //metodo que mueve el disparo en vertical
     public void moverdisparo(){
          yDisparo --;
     }
+   //este metodo comprueva si el disparo ha colisionado con alguno de los elementos del arrays list y retorna un boolean 
     public boolean colisiondisparo(){
         boolean choque = false;
         for(int i=0; i<listaEnemigo.size(); i++ ){
