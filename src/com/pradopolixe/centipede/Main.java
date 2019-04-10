@@ -84,7 +84,7 @@ public class Main extends Application {
         
         
         // Creación del metodo escena para que aparezca en pantalla el juego
-        Scene scene = new Scene(root, 693, 693);
+        Scene scene = new Scene(root, 660, 660);
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);

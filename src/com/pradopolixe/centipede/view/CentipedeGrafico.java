@@ -120,7 +120,7 @@ public class CentipedeGrafico {
         // Paso para dar color al fondo
         rejilla.setFill(Color.BLACK);
         // Paso para dar color al borde
-        rejilla.setStroke(Color.BROWN);
+//        rejilla.setStroke(Color.BROWN);
         // Añadimos la rejilla al gridTablero 
         gridTablero.add(rejilla, x, y);
     }
