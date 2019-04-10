@@ -37,11 +37,11 @@ public class Main extends Application {
 //        centipede.getGridTablero();
         System.out.println("");
         centipede.mostrarTablero();
-        //centipede.cienpies(15,5);
+//        centipede.ponerChampiñon(7,10);
+//        centipede.cienpies(15,5);
 //        centipede.cienpies2(16,5);
-////        centipede.patas(16,5);
-//        centipede.nave(18,31);
-//        centipede.disparo(18,30);
+//        centipede.nave(16,31);
+//        centipede.disparo(16,30);
 //  
 //        
         // Bucle para unir mis elementos con mi compañero en el tablero
@@ -49,18 +49,18 @@ public class Main extends Application {
             for(int x=0; x<33; x++) {
                 switch(union.matrizTablero[x][y]) {
                     // Caso 2: union del tablero con el cienpies
-                    case '2':
-                        centipede.cienpies(x,y);
-                    break;
-                    // Caso 3: union del tablero con la nave
-                    case '3':
-                        centipede.nave(x,y);
-                    break;
-                    // Caso 4: union del tablero con el disparo
-                    case '4':
-                        centipede.disparo(x, y);
+//                    case '2':
+//                        centipede.cienpies(x,y);
 //                    break;
-                    // Caso 5: union del tablero con los champiñones
+//                    // Caso 3: union del tablero con la nave
+//                    case '3':
+//                        centipede.nave(x,y);
+//                    break;
+//                    // Caso 4: union del tablero con el disparo
+//                    case '4':
+//                        centipede.disparo(x, y);
+////                    break;
+//                    // Caso 5: union del tablero con los champiñones
                     case '5':
                         centipede.ponerChampiñon(x,y);
                     break;
@@ -70,7 +70,14 @@ public class Main extends Application {
         AnimationTimer prueba = new AnimationTimer(){
             @Override
             public void handle(long now) {
+           for(int y=0; y<33; y++) {
+            for(int x=0; x<33; x++) {
+            if (union.matrizTablero[x][y]=='2'){
                 union.moverEnemigo();
+                centipede.cienpies(x,y);
+                        }
+                    }
+                }
             }
         };
         
