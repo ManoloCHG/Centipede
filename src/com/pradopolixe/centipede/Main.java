@@ -40,7 +40,7 @@ public class Main extends Application {
 //        centipede.ponerChampiñon(7,10);
 //        centipede.cienpies(15,5);
 //        centipede.cienpies2(16,5);
-//        centipede.nave(16,31);
+        centipede.nave(union.xNave,union.yNave);
 //        centipede.disparo(16,30);
 //  
 //        
@@ -49,18 +49,18 @@ public class Main extends Application {
             for(int x=0; x<33; x++) {
                 switch(union.matrizTablero[x][y]) {
                     // Caso 2: union del tablero con el cienpies
-//                    case '2':
-//                        centipede.cienpies(x,y);
+                    case '2':
+                        centipede.cienpies(x,y);
+                    break;
+                    // Caso 3: union del tablero con la nave
+                    case '3':
+                        centipede.nave(x,y);
+                    break;
+                    // Caso 4: union del tablero con el disparo
+                    case '4':
+                        centipede.disparo(x, y);
 //                    break;
-//                    // Caso 3: union del tablero con la nave
-//                    case '3':
-//                        centipede.nave(x,y);
-//                    break;
-//                    // Caso 4: union del tablero con el disparo
-//                    case '4':
-//                        centipede.disparo(x, y);
-////                    break;
-//                    // Caso 5: union del tablero con los champiñones
+                    // Caso 5: union del tablero con los champiñones
                     case '5':
                         centipede.ponerChampiñon(x,y);
                     break;
@@ -80,13 +80,11 @@ public class Main extends Application {
                 }
             }
         };
-        
-        
 
         StackPane root = new StackPane();
         root.getChildren().add(centipede.getGridTablero());
 //        centipede.mostrarTablero();
-        
+//        
 //        CentipedeGrafico.ponerChampiñon();
         
         

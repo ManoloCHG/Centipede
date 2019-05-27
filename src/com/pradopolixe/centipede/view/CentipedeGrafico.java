@@ -28,8 +28,6 @@ public class CentipedeGrafico {
         return gridTablero;
     }
     
-    
-    
     // Método para la creacion del champiñon
     public void ponerChampiñon(int x, int y) {
         // Creación del champiñon con la clase Arc

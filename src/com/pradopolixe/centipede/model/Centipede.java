@@ -73,9 +73,9 @@ public class Centipede {
     }
     //Mover enemigo con todas las colisiones 
     //Valor del enemigo = 2
-    int xEnemigo = 7;
-    int yEnemigo = 0;
-    int velocidadCienpies = 1;
+    public int xEnemigo = 7;
+    public int yEnemigo = 0;
+    public int velocidadCienpies = 1;
     public void moverEnemigo(){
         int xFutura = xEnemigo + velocidadCienpies;
         if (xEnemigo == 0){
@@ -114,8 +114,8 @@ public class Centipede {
         }
     }
     
-    int xNave = 9;
-    int yNave = 32;
+    public int xNave = 9;
+    public int yNave = 32;
     //Valor de la Nave = 3
     // con los diferentes movimientos  
     public void moverNave(int direcNave) {  
@@ -153,8 +153,8 @@ public class Centipede {
         }
     }
     // el disparo  que va a realizar la nave
-    int yDisparo = 0;
-    int xDisparo = 0;
+    public int yDisparo = 0;
+    public int xDisparo = 0;
     boolean disparo = false;
     public void disparar(){
         disparo = true;
