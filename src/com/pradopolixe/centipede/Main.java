@@ -38,10 +38,10 @@ public class Main extends Application {
         System.out.println("");
         centipede.mostrarTablero();
 //        centipede.ponerChampiñon(7,10);
-//        centipede.cienpies(15,5);
-//        centipede.cienpies2(16,5);
+        centipede.cienpies(union.xEnemigo,union.yEnemigo);
+        centipede.cienpies2(union.xEnemigo + 1,union.yEnemigo);
         centipede.nave(union.xNave,union.yNave);
-//        centipede.disparo(16,30);
+        centipede.disparo(union.xDisparo,union.yDisparo);
 //  
 //        
         // Bucle para unir mis elementos con mi compañero en el tablero
