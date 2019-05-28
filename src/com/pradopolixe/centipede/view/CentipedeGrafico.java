@@ -64,14 +64,6 @@ public class CentipedeGrafico {
             gridTablero.add(bicho,x,y);      
     }
     
-    // Método para la creación del cuerpo del cienpies
-    public void cienpies2 (int x, int y){
-        // Creación del cuerpo del cienpies con un circulo
-        Circle cuerpoCienpies = new Circle (64, 50, 8, Color.GREEN);
-        // Llamamos al cuerpo del cienpies y lo añadimos al gridTablero
-        gridTablero.add(cuerpoCienpies,x,y);  
-    }
-    
     // Método para la creación de la nave
     public void nave (int x, int y){
         // Creamos la nave con la clase Polygon

@@ -11,6 +11,7 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -25,7 +26,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        
 
         // Creación del metodo 'centipede' para llamar a los metodos de otra clase
         CentipedeGrafico centipede = new CentipedeGrafico();
@@ -39,7 +39,6 @@ public class Main extends Application {
         centipede.mostrarTablero();
 //        centipede.ponerChampiñon(7,10);
         centipede.cienpies(union.xEnemigo,union.yEnemigo);
-        centipede.cienpies2(union.xEnemigo + 1,union.yEnemigo);
         centipede.nave(union.xNave,union.yNave);
         centipede.disparo(union.xDisparo,union.yDisparo);
 //  
@@ -67,6 +66,18 @@ public class Main extends Application {
                 }
             }            
         }
+
+
+        StackPane root = new StackPane();
+        root.getChildren().add(centipede.getGridTablero());
+//        centipede.mostrarTablero();
+//        
+//        CentipedeGrafico.ponerChampiñon();
+        
+
+        // Creación del metodo escena para que aparezca en pantalla el juego
+        Scene scene = new Scene(root, 660, 660);
+        
         AnimationTimer prueba = new AnimationTimer(){
             @Override
             public void handle(long now) {
@@ -75,21 +86,37 @@ public class Main extends Application {
             if (union.matrizTablero[x][y]=='2'){
                 union.moverEnemigo();
                 centipede.cienpies(x,y);
+                
+            
+
                         }
                     }
                 }
+        scene.setOnKeyPressed((KeyEvent event) -> {
+            switch(event.getCode()){
+                case LEFT:
+                    union.moverNave(3);
+                    break;
+                case RIGHT:
+                    union.moverNave(4);
+                    break;
+                case UP:
+                    union.moverNave(1);
+                    break;
+                case DOWN:
+                    union.moverNave(2);
+                    break;
+                
+            }
+        });
+        scene.setOnKeyReleased((KeyEvent event) -> {
+            union.xNave = 0;
+            union.yNave = 0;
+        });
             }
         };
+        
 
-        StackPane root = new StackPane();
-        root.getChildren().add(centipede.getGridTablero());
-//        centipede.mostrarTablero();
-//        
-//        CentipedeGrafico.ponerChampiñon();
-        
-        
-        // Creación del metodo escena para que aparezca en pantalla el juego
-        Scene scene = new Scene(root, 660, 660);
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
