@@ -81,17 +81,19 @@ public class Main extends Application {
         AnimationTimer prueba = new AnimationTimer(){
             @Override
             public void handle(long now) {
-           for(int y=0; y<33; y++) {
-            for(int x=0; x<33; x++) {
-            if (union.matrizTablero[x][y]=='2'){
-                union.moverEnemigo();
-                centipede.cienpies(x,y);
-                
+                for(int y=0; y<33; y++) {
+                    for(int x=0; x<33; x++) {
+                        if (union.matrizTablero[x][y]=='2'){
+                        union.moverEnemigo();
+                        centipede.cienpies(x,y);
             
+                
+                
 
-                        }
+
                     }
                 }
+            };
         scene.setOnKeyPressed((KeyEvent event) -> {
             switch(event.getCode()){
                 case LEFT:
@@ -116,7 +118,7 @@ public class Main extends Application {
             }
         };
         
-
+        prueba.start();
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
