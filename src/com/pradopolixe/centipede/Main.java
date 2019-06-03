@@ -70,9 +70,6 @@ public class Main extends Application {
 
         StackPane root = new StackPane();
         root.getChildren().add(centipede.getGridTablero());
-//        centipede.mostrarTablero();
-//        
-//        CentipedeGrafico.ponerChampiñon();
         
 
         // Creación del metodo escena para que aparezca en pantalla el juego
@@ -86,14 +83,13 @@ public class Main extends Application {
                         if (union.matrizTablero[x][y]=='2'){
                         union.moverEnemigo();
                         centipede.cienpies(x,y);
-            
-                
-                
-
-
+                        }   
                     }
                 }
-            };
+            }
+        };
+        
+        prueba.start();
         scene.setOnKeyPressed((KeyEvent event) -> {
             switch(event.getCode()){
                 case LEFT:
@@ -108,28 +104,26 @@ public class Main extends Application {
                 case DOWN:
                     union.moverNave(2);
                     break;
-                
+
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {
             union.xNave = 0;
             union.yNave = 0;
         });
-            }
-        };
         
-        prueba.start();
+        
         
         primaryStage.setTitle("Centipede");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
+    
     
 }
