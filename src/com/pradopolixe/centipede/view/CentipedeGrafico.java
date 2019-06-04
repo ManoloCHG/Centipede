@@ -84,6 +84,11 @@ public class CentipedeGrafico {
         nave.setFill(Color.LIGHTBLUE);
         // Llamamos a la nave y lo añadimos al gridTablero
         gridTablero.add(nave,x,y);
+        gridTablero.getChildren().remove()
+    }
+    
+    public void movimientoNave (int x, int y){
+        if 
     }
     
     // Método para la creación del disparo

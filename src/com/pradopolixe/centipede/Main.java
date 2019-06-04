@@ -28,40 +28,40 @@ public class Main extends Application {
         
 
         // Creación del metodo 'centipede' para llamar a los metodos de otra clase
-        CentipedeGrafico centipede = new CentipedeGrafico();
+        CentipedeGrafico centipedeGrafico = new CentipedeGrafico();
         // Creación del metodo 'union' para llamar a los metodos de las clases de mi compañero
-        Centipede union = new Centipede();
+        Centipede centipede = new Centipede();
 
         
         // Mostrar los diferentes metodos necesarios
 //        centipede.getGridTablero();
         System.out.println("");
-        centipede.mostrarTablero();
+        centipedeGrafico.mostrarTablero();
 //        centipede.ponerChampiñon(7,10);
-        centipede.cienpies(union.xEnemigo,union.yEnemigo);
-        centipede.nave(union.xNave,union.yNave);
-        centipede.disparo(union.xDisparo,union.yDisparo);
+        centipedeGrafico.cienpies(centipede.xEnemigo,centipede.yEnemigo);
+        centipedeGrafico.nave(centipede.xNave,centipede.yNave);
+        centipedeGrafico.disparo(centipede.xDisparo,centipede.yDisparo);
 //  
 //        
         // Bucle para unir mis elementos con mi compañero en el tablero
         for(int y=0; y<33; y++) {
             for(int x=0; x<33; x++) {
-                switch(union.matrizTablero[x][y]) {
+                switch(centipede.matrizTablero[x][y]) {
                     // Caso 2: union del tablero con el cienpies
                     case '2':
-                        centipede.cienpies(x,y);
+                        centipedeGrafico.cienpies(x,y);
                     break;
                     // Caso 3: union del tablero con la nave
                     case '3':
-                        centipede.nave(x,y);
+                        centipedeGrafico.nave(x,y);
                     break;
                     // Caso 4: union del tablero con el disparo
                     case '4':
-                        centipede.disparo(x, y);
+                        centipedeGrafico.disparo(x, y);
 //                    break;
                     // Caso 5: union del tablero con los champiñones
                     case '5':
-                        centipede.ponerChampiñon(x,y);
+                        centipedeGrafico.ponerChampiñon(x,y);
                     break;
                 }
             }            
@@ -69,7 +69,7 @@ public class Main extends Application {
 
 
         StackPane root = new StackPane();
-        root.getChildren().add(centipede.getGridTablero());
+        root.getChildren().add(centipedeGrafico.getGridTablero());
         
 
         // Creación del metodo escena para que aparezca en pantalla el juego
@@ -80,9 +80,9 @@ public class Main extends Application {
             public void handle(long now) {
                 for(int y=0; y<33; y++) {
                     for(int x=0; x<33; x++) {
-                        if (union.matrizTablero[x][y]=='2'){
-                        union.moverEnemigo();
-                        centipede.cienpies(x,y);
+                        if (centipede.matrizTablero[x][y]=='2'){
+                        centipede.moverEnemigo();
+                        centipedeGrafico.cienpies(x,y);
                         }   
                     }
                 }
@@ -93,23 +93,25 @@ public class Main extends Application {
         scene.setOnKeyPressed((KeyEvent event) -> {
             switch(event.getCode()){
                 case LEFT:
-                    union.moverNave(3);
+                    System.out.println("LEFT");
+                    centipede.moverNave(3);
+                    centipedeGrafico.nave(centipede.xNave,centipede.yNave);
                     break;
                 case RIGHT:
-                    union.moverNave(4);
+                    centipede.moverNave(4);
                     break;
                 case UP:
-                    union.moverNave(1);
+                    centipede.moverNave(1);
                     break;
                 case DOWN:
-                    union.moverNave(2);
+                    centipede.moverNave(2);
                     break;
 
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {
-            union.xNave = 0;
-            union.yNave = 0;
+            centipede.xNave = 0;
+            centipede.yNave = 0;
         });
         
         

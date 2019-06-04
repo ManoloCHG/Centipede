@@ -52,7 +52,7 @@ public class Centipede {
         int y = rnd.nextInt(29);
         while (matrizTablero[x][y] == '5'){
             x = rnd.nextInt(33);
-            y = rnd.nextInt(41);
+            y = rnd.nextInt(29);
         } 
         matrizTablero[x][y] = '5';
         }
