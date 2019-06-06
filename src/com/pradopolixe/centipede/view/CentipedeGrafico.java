@@ -17,12 +17,27 @@ import javafx.scene.shape.Rectangle;
 
 
 
+
+
 // Creación de la clase CentipedeGráfico
 public class CentipedeGrafico {
     // Creación del objeto union
     Centipede union = new Centipede();
     // Creación del objeto gridTablero
     GridPane gridTablero = new GridPane();
+    Polygon nave = new Polygon (new double[]{
+        150.0, 155.0,      // Puntos iniciales y finales para la creacion de la nave //
+        140.0, 170.0,   
+        150.0, 170.0,
+        150.0, 155.0,
+        160.0, 170.0,
+        150.0, 170.0,
+        150.0, 175.0,
+        140.0, 170.0,
+        150.0, 170.0,
+        150.0, 175.0,
+        160.0, 170.0,
+        150.0, 170.0,});  
     
     public GridPane getGridTablero() {
         return gridTablero;
@@ -65,7 +80,7 @@ public class CentipedeGrafico {
     }
     
     // Método para la creación de la nave
-    public void nave (int x, int y){
+    public void crearNave (int x, int y){
         // Creamos la nave con la clase Polygon
         Polygon nave = new Polygon (new double[]{
             150.0, 155.0,      // Puntos iniciales y finales para la creacion de la nave //
@@ -84,11 +99,13 @@ public class CentipedeGrafico {
         nave.setFill(Color.LIGHTBLUE);
         // Llamamos a la nave y lo añadimos al gridTablero
         gridTablero.add(nave,x,y);
-        gridTablero.getChildren().remove()
+//        gridTablero.getChildren().remove();
     }
     
     public void movimientoNave (int x, int y){
-        if 
+
+        gridTablero.getChildren().remove(nave);
+
     }
     
     // Método para la creación del disparo

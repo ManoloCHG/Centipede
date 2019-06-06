@@ -39,7 +39,7 @@ public class Main extends Application {
         centipedeGrafico.mostrarTablero();
 //        centipede.ponerChampiñon(7,10);
         centipedeGrafico.cienpies(centipede.xEnemigo,centipede.yEnemigo);
-        centipedeGrafico.nave(centipede.xNave,centipede.yNave);
+        centipedeGrafico.crearNave(centipede.xNave,centipede.yNave);
         centipedeGrafico.disparo(centipede.xDisparo,centipede.yDisparo);
 //  
 //        
@@ -53,7 +53,7 @@ public class Main extends Application {
                     break;
                     // Caso 3: union del tablero con la nave
                     case '3':
-                        centipedeGrafico.nave(x,y);
+                        centipedeGrafico.crearNave(x,y);
                     break;
                     // Caso 4: union del tablero con el disparo
                     case '4':
@@ -95,7 +95,7 @@ public class Main extends Application {
                 case LEFT:
                     System.out.println("LEFT");
                     centipede.moverNave(3);
-                    centipedeGrafico.nave(centipede.xNave,centipede.yNave);
+                    centipedeGrafico.crearNave(centipede.xNave,centipede.yNave);
                     break;
                 case RIGHT:
                     centipede.moverNave(4);
@@ -110,8 +110,8 @@ public class Main extends Application {
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {
-            centipede.xNave = 0;
-            centipede.yNave = 0;
+//            centipede.xNave -- ;
+//            centipede.yNave --;
         });
         
         
