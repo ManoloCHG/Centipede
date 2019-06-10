@@ -81,30 +81,16 @@ public class CentipedeGrafico {
     
     // Método para la creación de la nave
     public void crearNave (int x, int y){
-        // Creamos la nave con la clase Polygon
-        Polygon nave = new Polygon (new double[]{
-            150.0, 155.0,      // Puntos iniciales y finales para la creacion de la nave //
-            140.0, 170.0,   
-            150.0, 170.0,
-            150.0, 155.0,
-            160.0, 170.0,
-            150.0, 170.0,
-            150.0, 175.0,
-            140.0, 170.0,
-            150.0, 170.0,
-            150.0, 175.0,
-            160.0, 170.0,
-            150.0, 170.0,});  // Puntos iniciales y finales para la creacion de la nave //
         // Paso para pintar la nave de color azul claro
         nave.setFill(Color.LIGHTBLUE);
         // Llamamos a la nave y lo añadimos al gridTablero
         gridTablero.add(nave,x,y);
-//        gridTablero.getChildren().remove();
     }
     
     public void movimientoNave (int x, int y){
-
+        
         gridTablero.getChildren().remove(nave);
+        gridTablero.add(nave,x,y);
 
     }
     
