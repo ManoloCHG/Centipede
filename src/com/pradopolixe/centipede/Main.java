@@ -79,6 +79,7 @@ public class Main extends Application {
                         if (centipede.matrizTablero[x][y]=='2'){
                         centipede.moverEnemigo();
                         centipedeGrafico.cienpies(x,y);
+                        centipede.moverdisparo();
                         }   
                     }
                 }
@@ -105,7 +106,10 @@ public class Main extends Application {
                     centipede.moverNave(2);
                     centipedeGrafico.movimientoNave(centipede.xNave, centipede.yNave);
                     break;
-
+                case SPACE:
+                    centipede.moverdisparo();
+                    centipedeGrafico.disparo(centipede.xDisparo, centipede.yDisparo);
+                    break;
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {

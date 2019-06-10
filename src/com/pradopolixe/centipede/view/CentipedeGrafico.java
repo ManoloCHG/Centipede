@@ -97,7 +97,7 @@ public class CentipedeGrafico {
     // Método para la creación del disparo
     public void disparo (int x, int y){
         // Paso para crear el tiro con la clase Circle
-        Circle tiro = new Circle(0, 0, 10, Color.ORANGE);
+        Circle tiro = new Circle(x, y, 10, Color.ORANGE);
         // Llamamos al disparo y lo añadimos al gridTablero
         gridTablero.add(tiro,x,y);
     }

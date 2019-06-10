@@ -153,12 +153,12 @@ public class Centipede {
         }
     }
     // el disparo  que va a realizar la nave
-    public int yDisparo = 0;
-    public int xDisparo = 0;
+    public int yDisparo = 20;
+    public int xDisparo = 20;
     boolean disparo = false;
     public void disparar(){
         disparo = true;
-        yDisparo = yNave-1;
+        yDisparo = yNave - 1;
         xDisparo = xNave;
         System.out.println(disparo);
     }
