@@ -51,10 +51,6 @@ public class Main extends Application {
                     case '2':
                         centipedeGrafico.cienpies(x,y);
                     break;
-                    // Caso 3: union del tablero con la nave
-//                    case '3':
-//                        centipedeGrafico.crearNave(x,y);
-//                    break;
                     // Caso 4: union del tablero con el disparo
                     case '4':
                         centipedeGrafico.disparo(x, y);
@@ -95,17 +91,19 @@ public class Main extends Application {
                 case LEFT:
                     System.out.println("LEFT");
                     centipede.moverNave(3);
-//                    centipedeGrafico.crearNave(centipede.xNave,centipede.yNave);
                     centipedeGrafico.movimientoNave(centipede.xNave, centipede.yNave);
                     break;
                 case RIGHT:
                     centipede.moverNave(4);
+                    centipedeGrafico.movimientoNave(centipede.xNave, centipede.yNave);
                     break;
                 case UP:
                     centipede.moverNave(1);
+                    centipedeGrafico.movimientoNave(centipede.xNave, centipede.yNave);
                     break;
                 case DOWN:
                     centipede.moverNave(2);
+                    centipedeGrafico.movimientoNave(centipede.xNave, centipede.yNave);
                     break;
 
             }

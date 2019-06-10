@@ -128,7 +128,7 @@ public class Centipede {
         switch (direcNave){
             case 1 :
              //Movimiento para Arriba = 1
-                if (yNave >= 29){
+                if (yNave >= 30){
                 yNave --;
                 }
             break;
