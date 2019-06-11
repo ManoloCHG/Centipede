@@ -76,6 +76,7 @@ public class Centipede {
     public int xEnemigo = 7;
     public int yEnemigo = 0;
     public int velocidadCienpies = 1;
+    
     public void moverEnemigo(){
         int xFutura = xEnemigo + velocidadCienpies;
         if (xEnemigo == 0){
@@ -155,7 +156,7 @@ public class Centipede {
     // el disparo  que va a realizar la nave
     public int yDisparo = 20;
     public int xDisparo = 20;
-    boolean disparo = false;
+    public boolean disparo = false;
     public void disparar(){
         disparo = true;
         yDisparo = yNave - 1;

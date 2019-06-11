@@ -10,6 +10,7 @@ import com.pradopolixe.centipede.model.Centipede;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.event.EventType;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
@@ -40,7 +41,8 @@ public class Main extends Application {
 //        centipede.ponerChampiñon(7,10);
         centipedeGrafico.cienpies(centipede.xEnemigo,centipede.yEnemigo);
         centipedeGrafico.crearNave(centipede.xNave,centipede.yNave);
-        centipedeGrafico.disparo(centipede.xDisparo,centipede.yDisparo);
+        centipedeGrafico.tiro.setVisible(false);
+
 //  
 //        
         // Bucle para unir mis elementos con mi compañero en el tablero
@@ -79,10 +81,24 @@ public class Main extends Application {
                         if (centipede.matrizTablero[x][y]=='2'){
                         centipede.moverEnemigo();
                         centipedeGrafico.cienpies(x,y);
-                        centipede.moverdisparo();
+
                         }   
                     }
                 }
+                
+                if (centipede.disparo == true){
+                    System.out.println("OLA");
+                    centipede.disparar();
+                    centipede.moverdisparo();
+                    // quitar y añadir disparo
+                    centipedeGrafico.disparo(centipede.xDisparo, centipede.yDisparo);
+
+                } else
+                if (centipede.yDisparo == -1){
+                    centipedeGrafico.tiro.setVisible(false);
+                    centipede.disparo = false;
+                }
+
             }
         };
         
@@ -107,8 +123,11 @@ public class Main extends Application {
                     centipedeGrafico.movimientoNave(centipede.xNave, centipede.yNave);
                     break;
                 case SPACE:
-                    centipede.moverdisparo();
+                    centipede.xDisparo = centipede.xNave;
+                    centipede.yDisparo = centipede.yNave - 1;
                     centipedeGrafico.disparo(centipede.xDisparo, centipede.yDisparo);
+                    centipede.disparar();
+                    centipede.moverdisparo();
                     break;
             }
         });

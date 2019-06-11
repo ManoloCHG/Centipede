@@ -37,7 +37,10 @@ public class CentipedeGrafico {
         150.0, 170.0,
         150.0, 175.0,
         160.0, 170.0,
-        150.0, 170.0,});  
+        150.0, 170.0,});
+    
+    // Paso para crear el tiro con la clase Circle
+    public Circle tiro = new Circle(0, 0, 10, Color.ORANGE);
     
     public GridPane getGridTablero() {
         return gridTablero;
@@ -96,11 +99,13 @@ public class CentipedeGrafico {
     
     // Método para la creación del disparo
     public void disparo (int x, int y){
-        // Paso para crear el tiro con la clase Circle
-        Circle tiro = new Circle(x, y, 10, Color.ORANGE);
         // Llamamos al disparo y lo añadimos al gridTablero
+        gridTablero.getChildren().remove(tiro);
         gridTablero.add(tiro,x,y);
+        tiro.setVisible(true);
+
     }
+    
     
     // Método para la creación de mostrar el tablero
     public void mostrarTablero(){
