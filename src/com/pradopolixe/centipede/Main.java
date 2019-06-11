@@ -91,7 +91,7 @@ public class Main extends Application {
                     centipede.disparar();
                     centipede.moverdisparo();
                     // quitar y añadir disparo
-                    centipedeGrafico.disparo(centipede.xDisparo, centipede.yDisparo);
+                   
 
                 } else
                 if (centipede.yDisparo == -1){
