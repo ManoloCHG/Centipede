@@ -24,7 +24,7 @@ public class CentipedeGrafico {
     // Creación del objeto union
     Centipede union = new Centipede();
     // Creación del objeto gridTablero
-    GridPane gridTablero = new GridPane();
+    public GridPane gridTablero = new GridPane();
     Polygon nave = new Polygon (new double[]{
         150.0, 155.0,      // Puntos iniciales y finales para la creacion de la nave //
         140.0, 170.0,   
@@ -41,6 +41,7 @@ public class CentipedeGrafico {
     
     // Paso para crear el tiro con la clase Circle
     public Circle tiro = new Circle(0, 0, 10, Color.ORANGE);
+    public Group bicho;
     
     public GridPane getGridTablero() {
         return gridTablero;
@@ -104,6 +105,10 @@ public class CentipedeGrafico {
         gridTablero.add(tiro,x,y);
         tiro.setVisible(true);
 
+    }
+    
+    public void movimientoEnemigo (int x, int y){
+        gridTablero.getChildren().remove(bicho);
     }
     
     

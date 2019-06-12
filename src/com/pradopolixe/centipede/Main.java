@@ -42,6 +42,7 @@ public class Main extends Application {
         centipedeGrafico.cienpies(centipede.xEnemigo,centipede.yEnemigo);
         centipedeGrafico.crearNave(centipede.xNave,centipede.yNave);
         centipedeGrafico.tiro.setVisible(false);
+//        centipede.Enemigo();
 
 //  
 //        
@@ -79,8 +80,10 @@ public class Main extends Application {
                 for(int y=0; y<33; y++) {
                     for(int x=0; x<33; x++) {
                         if (centipede.matrizTablero[x][y]=='2'){
-//                        centipede.moverEnemigo();
-//                        centipedeGrafico.cienpies(x,y);
+//                        centipedeGrafico.gridTablero.getChildren().remove(centipedeGrafico.bicho);
+                        centipede.moverEnemigo();
+                        centipedeGrafico.cienpies(x,y);
+
 
                         }   
                     }
