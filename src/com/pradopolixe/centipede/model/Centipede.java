@@ -165,8 +165,14 @@ public class Centipede {
     }
    //metodo que mueve el disparo en vertical
     public void moverdisparo(){
-         yDisparo --;
+         if (yDisparo > 0){
+             yDisparo --;
+         } else if (yDisparo == 0){
+             yDisparo = 0;
+             disparo = false;
+         }
     }
+    
    //este metodo comprueva si el disparo ha colisionado con alguno de los elementos del arrays list y retorna un boolean 
     public boolean colisiondisparo(){
         boolean choque = false;

@@ -79,24 +79,24 @@ public class Main extends Application {
                 for(int y=0; y<33; y++) {
                     for(int x=0; x<33; x++) {
                         if (centipede.matrizTablero[x][y]=='2'){
-                        centipede.moverEnemigo();
-                        centipedeGrafico.cienpies(x,y);
+//                        centipede.moverEnemigo();
+//                        centipedeGrafico.cienpies(x,y);
 
                         }   
                     }
                 }
+                    centipede.moverEnemigo();
+                    centipedeGrafico.cienpies(centipede.xEnemigo,centipede.yEnemigo);
                 
                 if (centipede.disparo == true){
-                    System.out.println("OLA");
-                    centipede.disparar();
                     centipede.moverdisparo();
+                    centipedeGrafico.disparo(centipede.xDisparo, centipede.yDisparo);
                     // quitar y añadir disparo
                    
 
                 } else
-                if (centipede.yDisparo == -1){
+                if (centipede.yDisparo == 0){
                     centipedeGrafico.tiro.setVisible(false);
-                    centipede.disparo = false;
                 }
 
             }
@@ -132,8 +132,7 @@ public class Main extends Application {
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {
-//            centipede.xNave -- ;
-//            centipede.yNave --;
+            
         });
         
         
