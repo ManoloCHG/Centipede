@@ -80,14 +80,14 @@ public class Main extends Application {
                 for(int y=0; y<33; y++) {
                     for(int x=0; x<33; x++) {
                         if (centipede.matrizTablero[x][y]=='2'){
-//                        centipedeGrafico.gridTablero.getChildren().remove(centipedeGrafico.bicho);
-                        centipede.moverEnemigo();
                         centipedeGrafico.cienpies(x,y);
-
 
                         }   
                     }
                 }
+//                    centipedeGrafico.gridTablero.getChildren().remove(centipedeGrafico.bicho);
+                    centipede.Enemigo();
+                    centipedeGrafico.movimientoEnemigo();
                     centipede.moverEnemigo();
                     centipedeGrafico.cienpies(centipede.xEnemigo,centipede.yEnemigo);
                 
@@ -97,9 +97,16 @@ public class Main extends Application {
                     // quitar y añadir disparo
                    
 
-                } else
-                if (centipede.yDisparo == 0){
-                    centipedeGrafico.tiro.setVisible(false);
+                } else{
+                    if (centipede.yDisparo == 0){
+                        centipedeGrafico.tiro.setVisible(false);
+                
+                    }
+                }
+                
+                if (centipede.colisiondisparo() == true){
+                    System.out.println("Game Over");
+                    this.stop();
                 }
 
             }

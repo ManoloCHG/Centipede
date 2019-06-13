@@ -179,9 +179,10 @@ public class Centipede {
         for(int i=0; i<listaEnemigo.size(); i++ ){
             Point p = listaEnemigo.get(i);
             if (p.getX()== xDisparo && p.getY()==yDisparo){
-            choque = true;
+                choque = true;
             }
         }
         return choque;
     }
 }
+

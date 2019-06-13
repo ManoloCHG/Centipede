@@ -22,7 +22,7 @@ import javafx.scene.shape.Rectangle;
 // Creación de la clase CentipedeGráfico
 public class CentipedeGrafico {
     // Creación del objeto union
-    Centipede union = new Centipede();
+    //Centipede union = new Centipede();
     // Creación del objeto gridTablero
     public GridPane gridTablero = new GridPane();
     Polygon nave = new Polygon (new double[]{
@@ -41,7 +41,7 @@ public class CentipedeGrafico {
     
     // Paso para crear el tiro con la clase Circle
     public Circle tiro = new Circle(0, 0, 10, Color.ORANGE);
-    public Group bicho;
+    public Group bicho = new Group();
     
     public GridPane getGridTablero() {
         return gridTablero;
@@ -69,7 +69,6 @@ public class CentipedeGrafico {
     // Método para la creacion de la cabeza del cienpies
     public void cienpies(int x, int y){
         // Creacion del grupo bicho(enemigo)
-        Group bicho = new Group();
             //Pasos para la creación de la cabeza del cienpies
             Circle cabezaCienpies = new Circle(50, 50, 10, Color.GREEN);
             // Pasos para la creacion de los ojos en la cabeza del cienpies
@@ -107,9 +106,10 @@ public class CentipedeGrafico {
 
     }
     
-    public void movimientoEnemigo (int x, int y){
+    public void movimientoEnemigo (){
         gridTablero.getChildren().remove(bicho);
     }
+    
     
     
     // Método para la creación de mostrar el tablero
