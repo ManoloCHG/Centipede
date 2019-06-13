@@ -105,7 +105,7 @@ public class Main extends Application {
                 }
                 
                 if (centipede.colisiondisparo() == true){
-                    System.out.println("Game Over");
+                    System.out.println("GAME OVER");
                     this.stop();
                 }
 
